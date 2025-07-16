@@ -5,7 +5,10 @@
     count += 1;
   }
 </script>
+<div class="flex flex-col gap-3">
 
-<button class='bg-red-500 p-4 w-[150px]' onclick={handleClick}>
-  clicks: {count}
-</button>
+  <button class='bg-primary ' onclick={handleClick}>
+    clicks: {count}
+  </button>
+  <p class="bg-red-500">hello world</p>
+</div>

@@ -1,0 +1,276 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap') layer(base);
+
+@import 'tailwindcss';
+
+@theme {
+	--breakpoint-*: initial;
+	--breakpoint-desktop: 1440px;
+	--breakpoint-laptop: 1280px;
+	--breakpoint-tablet: 834px;
+	--text-*: initial;
+	--text-xxs: 0.75rem;
+	--text-xxs--line-height: 0.75rem;
+	--text-xxs--letter-spacing: 0.5%;
+	--text-xs: 0.875rem;
+	--text-xs--line-height: 1.3125rem;
+	--text-xs--letter-spacing: 0.5%;
+	--text-sm: 1rem;
+	--text-sm--line-height: 1.5rem;
+	--text-sm--letter-spacing: 0.5%;
+	--text-lg: 1.125rem;
+	--text-lg--line-height: 1.6875rem;
+	--text-lg--letter-spacing: 1%;
+	--text-xl: 1.25rem;
+	--text-xl--line-height: 1.85rem;
+	--text-xl--letter-spacing: 0.5%;
+	--text-2xl: 1.5rem;
+	--text-2xl--line-height: 2.1rem;
+	--text-2xl--letter-spacing: 0.5%;
+	--text-3xl: 2rem;
+
+	--color-*: initial;
+	--color-primary: var(--foreground);
+	--color-secondary: var(--muted);
+	--color-tertiary: var(--background);
+	--color-white: #ffffff;
+	--color-blue-50: #e7eeff;
+	--color-blue-100: #bdcfff;
+	--color-blue-200: #93b1ff;
+	--color-blue-300: #6993ff;
+	--color-blue-400: #3269f5;
+	--color-blue-500: #1555fc;
+	--color-blue-600: #023cd3;
+	--color-blue-700: #002faa;
+	--color-blue-800: #002481;
+	--color-blue-900: #001959;
+	--color-blue-1000: #1e334b;
+
+	--color-green-50: #e9f9ee;
+	--color-green-100: #edfff1;
+	--color-green-200: #d4f6de;
+	--color-green-300: #b4dfc4;
+	--color-green-400: #9be4b6;
+	--color-green-500: #5bb98c;
+	--color-green-600: #30a46c;
+	--color-green-700: #1a7f37;
+	--color-green-800: #0e6427;
+	--color-green-900: #173b2c;
+
+	--color-red-50: #fff7f7;
+	--color-red-100: #ffe7e7;
+	--color-red-200: #ffd8d8;
+	--color-red-300: #fdc2c2;
+	--color-red-400: #f79596;
+	--color-red-500: #e03636;
+	--color-red-600: #cc2929;
+	--color-red-700: #b52a2a;
+	--color-red-800: #941f1f;
+	--color-red-900: #6b1515;
+
+	--color-amber-50: #fdfaed;
+	--color-amber-100: #fff7d3;
+	--color-amber-200: #feeda9;
+	--color-amber-300: #fbdb73;
+	--color-amber-400: #fbcc55;
+	--color-amber-500: #e79913;
+	--color-amber-600: #db7706;
+	--color-amber-700: #916728;
+	--color-amber-800: #91400d;
+	--color-amber-900: #763813;
+
+	--color-gray-50: #f8f8f8;
+	--color-gray-100: #f3f3f3;
+	--color-gray-200: #ededed;
+	--color-gray-300: #e2e2e2;
+	--color-gray-400: #c7c7c7;
+	--color-gray-500: #999999;
+	--color-gray-600: #7c7c7c;
+	--color-gray-700: #525252;
+	--color-gray-800: #383838;
+	--color-gray-900: #171717;
+
+	--shadow-card:
+		0px 1px 15px 0px rgba(44, 44, 45, 0.03), 0px 4px 11px 0px rgba(155, 155, 155, 0.02),
+		0px 5px 22px 0px rgba(154, 154, 156, 0.02);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
+}
+
+@layer utilities {
+	@font-face {
+		font-family: 'InterVariable';
+		src: url('/fonts/InterVariable.ttf') format('truetype');
+		font-weight: 100 900;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'InterVariable';
+		src: url('/fonts/InterVariable-Italic.ttf') format('truetype');
+		font-weight: 100 900;
+		font-style: italic;
+	}
+
+	:root {
+		--background: #ffffff;
+		--foreground: #1555fc;
+		--foreground-alt: '#001959';
+		--muted: '#E2E2E2';
+		--muted-alt: '#999999';
+		--danger-bg: '#E03636';
+		--danger-text: '#6B1515';
+		--warning-bg: '#E79913';
+		--warning-text: '#763813';
+		--success-bg: '#5BB98C';
+		--success-text: '#173B2C';
+		--text-color: '#171717';
+	}
+}
+@layer base {
+	html {
+		font-family: 'Inter Variable', sans-serif;
+		color: var(--text-color);
+		background: var(--background);
+	}
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+.ant-select-focused:where(.css-dev-only-do-not-override-12aaqu9).ant-select-outlined:not(
+		.ant-select-disabled
+	):not(.ant-select-customize-input):not(.ant-pagination-size-changer)
+	.ant-select-selector {
+	box-shadow: none !important;
+}
+
+.ant-upload-select {
+	display: block !important;
+}
+
+.ant-collapse-expand-icon {
+	cursor: pointer !important;
+}
+
+.ant-modal-mask {
+	backdrop-filter: blur(40px) !important;
+	background: transparent, #0000004d !important;
+	background-blend-mode: overlay !important;
+	-webkit-backdrop-filter: blur(30px) !important;
+}
+
+/* modal children to have no padding */
+.ant-modal-content {
+	padding: 0 !important;
+}
+
+.ant-upload-select {
+	display: block !important;
+}
+
+.ant-tooltip-inner {
+	width: 263px !important;
+	padding: 20px !important;
+}
+
+.ant-input-outlined {
+	background-color: white !important;
+}
+
+/* Merchant Layout */
+
+.main-layout {
+	display: grid;
+	grid-template-columns: 240px 1fr;
+	grid-template-rows: 60px 1fr;
+	grid-template-areas:
+		'navbar header'
+		'navbar main';
+	overflow: auto;
+	height: 100vh;
+	background-color: var(--color-white);
+}
+
+.header {
+	grid-area: header;
+	background-color: var(--background);
+}
+
+.navbar {
+	grid-area: navbar;
+}
+
+.main {
+	grid-area: main;
+}
+
+.merchant-layout {
+	overflow-x: hidden !important;
+}
+
+.ant-timeline .ant-timeline-item-head {
+	background-color: white !important;
+}
+
+/* Air Date Picker */
+.air-datepicker-cell.-selected- {
+	background-color: #1555fc !important;
+	border-radius: 6px !important ;
+}
+.air-datepicker-cell.-in-range- {
+	background: none !important;
+	color: #1555fc !important;
+}
+.air-datepicker-body--cells.-years- {
+	gap: 0.9375rem !important;
+	padding: 0.75rem !important;
+}
+.air-datepicker-body .-days- {
+	gap: 0.9375rem !important;
+	padding: 0.75rem !important;
+}
+.air-datepicker-nav--title {
+	color: #171717 !important;
+	font-weight: 500 !important;
+}
+
+.air-datepicker-cell.-current- {
+	color: #191a1a !important;
+}
+
+.air-datepicker-body--day-name {
+	color: #999999 !important;
+}
+.animated-switcher-icon {
+	display: inline-block;
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.animated-switcher-icon.expanded {
+	transform: rotate(90deg);
+}
+
+@source '../../packages/ui'
+
